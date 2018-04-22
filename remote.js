@@ -14,10 +14,10 @@ var lampBrightness = new blynk.VirtualPin(5);
 var enter = new blynk.VirtualPin(6);
 var input = new blynk.VirtualPin(7);
 
-power.on('write', function(param) 	{ if (param == 1) { port.write('l') }} console.log("TV power"));
-menu.on('write', function(param) 	{ if (param == 1) { port.write('i') }} console.log("TV menu"));
-volUp.on('write', function(param) 	{ if (param == 1) { port.write('b') }} console.log("TV volume up"));
-volDown.on('write', function(param) { if (param == 1) { port.write('c') }} console.log("TV volume down"));
+power.on('write', function(param) 	{ if (param == 1) { port.write('l') console.log("TV power"); }}); 
+menu.on('write', function(param) 	{ if (param == 1) { port.write('i') console.log("TV menu"); }}); 
+volUp.on('write', function(param) 	{ if (param == 1) { port.write('b') console.log("TV volume up"); }}); 
+volDown.on('write', function(param) { if (param == 1) { port.write('c') console.log("TV volume down"); }}); 
 
 lampSwitch.on('write', function(param) 	{
 	var command;
@@ -36,8 +36,8 @@ lampBrightness.on('write', function(param) {
 	console.log(command);
 });
 
-enter.on('write', function(param) 	{ if (param == 1) { port.write('x') console.log("TV enter")}});
-input.on('write', function(param) 	{ if (param == 1) { port.write('w') console.log("TV input")}});
+enter.on('write', function(param) 	{ if (param == 1) { port.write('x') console.log("TV enter") }});
+input.on('write', function(param) 	{ if (param == 1) { port.write('w') console.log("TV input") }});
 
 blynk.on('connect', function() { console.log("Blynk ready."); });
 blynk.on('disconnect', function() { console.log("DISCONNECT"); });
